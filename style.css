@@ -1,0 +1,1669 @@
+* {
+    box-sizing: border-box;
+    font-family: "Arial Black", Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #141414;
+    color: white;
+}
+
+.main-container {
+    width: 80%;
+    max-width: 1500px;
+    margin: 30px auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+    background-color: rgba(29, 29, 29, 0.78);
+    border-radius: 25px;
+    padding: 15px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+
+    position: sticky;
+    top: 15px;
+    z-index: 5000;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-box {
+    width: 95%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.header-searchbar {
+    flex: 1;
+    max-width: 400px;
+    position: relative;
+}
+
+.header-searchbar input {
+    width: 80%;
+
+    padding: 12px 15px;
+
+    border: 2px solid #3f3f3f;
+    border-radius: 25px;
+
+    background-color: #292828;
+    color: white;
+
+    font-size: 16px;
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.header-searchbar input::placeholder {
+    color: #bbb;
+}
+
+.header-searchbar input:focus {
+    border-color: #7340e9;
+
+    box-shadow:
+        0 0 15px #7340e9;
+}
+
+.search-results {
+    display: none;
+
+    position: absolute;
+
+    top: calc(100% - 16px);
+    left: 50px;
+
+    width: 250px;
+    max-width: 80vw;
+
+    background-color: #242424;
+
+    border: 2px solid #3f3f3f;
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    z-index: 5000;
+
+    box-shadow:
+        0 15px 40px #000;
+}
+
+.search-result {
+    padding: 11px 14px;
+
+    color: white;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    transition: 0.2s;
+}
+
+.search-result:hover {
+    background-color: #7340e9;
+}
+
+
+/* =========================================================
+   HEADER TITLE
+   ========================================================= */
+
+.header-title {
+    margin: 0;
+
+    transform: translateX(-100px);
+
+    color: white;
+
+    font-size: 25px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+}
+
+.header-title h1 {
+    margin: 0;
+}
+
+
+/* =========================================================
+   DISCORD
+   ========================================================= */
+
+#discord-button {
+    display: flex;
+    align-items: center;
+
+    color: #979797;
+    text-decoration: none;
+
+    font-size: 20px;
+
+    border: 2px solid #3f3f3f;
+    border-radius: 15px;
+
+    padding: 12px 16px;
+
+    transition: 0.3s;
+}
+
+#discord-button img {
+    width: 30px;
+    height: 20px;
+
+    margin-right: 5px;
+}
+
+#discord-button:hover {
+    color: white;
+
+    border-color: #7340e9;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 15px #7340e9;
+}
+
+
+/* =========================================================
+   KIT NAVIGATION
+   ========================================================= */
+
+.nav-box {
+    margin-top: 30px;
+    padding: 30px;
+
+    background-color: #1d1d1d;
+
+    border-radius: 25px;
+}
+
+.kit-navigation {
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.kit-button {
+    display: inline-flex;
+    align-items: center;
+
+    color: #979797;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    border: 2px solid #3f3f3f;
+    border-radius: 15px;
+
+    padding: 12px 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.kit-button:hover,
+.kit-button.active {
+    color: white;
+
+    border-color: #7340e9;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 15px #7340e9;
+}
+
+.kit-button img {
+    width: 30px;
+    height: 30px;
+
+    margin-right: 8px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   LEADERBOARD
+   ========================================================= */
+
+.leaderboard-box {
+    margin-top: 30px;
+
+    padding: 30px;
+
+    min-height: 800px;
+
+    background-color: #1d1d1d;
+
+    border-radius: 25px;
+}
+
+.tierlist-header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.tierlist-header h2 {
+    margin: 0;
+
+    font-size: 30px;
+
+    letter-spacing: 2px;
+}
+
+.tierlist-header p {
+    margin-top: 8px;
+
+    color: #777;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================================================
+   SUB-TIERLIST
+   ========================================================= */
+
+.kit-tierlist {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+.tier-column {
+    min-height: 600px;
+
+    background-color: #242424;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    border: 1px solid #343434;
+}
+
+.tier-column-header {
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #292929;
+
+    border-bottom: 2px solid #3f3f3f;
+
+    font-size: 20px;
+}
+
+.tier-column-players {
+    display: flex;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 7px;
+
+    padding: 12px;
+}
+
+.player-card {
+    width: 100%;
+
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px;
+
+    background-color: #1d1d1d;
+
+    border: 1px solid #353535;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.player-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #7340e9;
+
+    background-color: #252525;
+
+    box-shadow:
+        0 0 12px rgba(115, 64, 233, 0.35);
+}
+
+.player-name {
+    font-size: 14px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   SUB-TIER COLORS
+   ========================================================= */
+
+.tier-ht1,
+.tier-ht2,
+.tier-ht3,
+.tier-ht4,
+.tier-ht5 {
+    color: #1d5cff;
+}
+
+.tier-lt1,
+.tier-lt2,
+.tier-lt3,
+.tier-lt4,
+.tier-lt5 {
+    color: #72a4ff;
+}
+
+.tier-retired {
+    color: #a58bd8;
+}
+
+.tier-na {
+    color: #555;
+}
+
+
+/* =========================================================
+   OVERALL LIST
+   ========================================================= */
+
+.overall-list {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   OVERALL PLAYER
+   ========================================================= */
+
+.overall-player {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 125px;
+
+    display: grid;
+
+    grid-template-columns:
+        50px
+        100px
+        150px
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 8px 15px;
+
+    background: #202020;
+
+    border: 1px solid #343434;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.overall-player:hover {
+    background: #272727;
+
+    border-color: #4b4b4b;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================================
+   TOP 3 LIGHT
+   ========================================================= */
+
+.overall-player::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+
+    width: 4px;
+
+    border-radius: 0 6px 6px 0;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* #1 GOLD */
+
+.overall-player:nth-child(1)::before {
+    opacity: 1;
+
+    background: #f1c94b;
+
+    box-shadow:
+        0 0 8px #f1c94b,
+        0 0 18px rgba(241, 201, 75, 0.8),
+        0 0 35px rgba(241, 201, 75, 0.45);
+}
+
+
+/* #2 SILVER */
+
+.overall-player:nth-child(2)::before {
+    opacity: 1;
+
+    background: #c8c8c8;
+
+    box-shadow:
+        0 0 8px #c8c8c8,
+        0 0 18px rgba(200, 200, 200, 0.7),
+        0 0 35px rgba(200, 200, 200, 0.35);
+}
+
+
+/* #3 BRONZE */
+
+.overall-player:nth-child(3)::before {
+    opacity: 1;
+
+    background: #b97849;
+
+    box-shadow:
+        0 0 8px #b97849,
+        0 0 18px rgba(185, 120, 73, 0.7),
+        0 0 35px rgba(185, 120, 73, 0.35);
+}
+
+
+/* =========================================================
+   TOP 3 HOVER
+   ========================================================= */
+
+.overall-player:nth-child(1):hover {
+    border-color: rgba(241, 201, 75, 0.55);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.45),
+        0 0 22px rgba(241, 201, 75, 0.12);
+}
+
+.overall-player:nth-child(2):hover {
+    border-color: rgba(200, 200, 200, 0.45);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.45),
+        0 0 22px rgba(200, 200, 200, 0.1);
+}
+
+.overall-player:nth-child(3):hover {
+    border-color: rgba(185, 120, 73, 0.5);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.45),
+        0 0 22px rgba(185, 120, 73, 0.12);
+}
+
+
+/* =========================================================
+   TOP 3 LIGHT ANIMATION
+   ========================================================= */
+
+@keyframes topThreeGlow {
+
+    0%,
+    100% {
+        opacity: 0.75;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.overall-player:nth-child(1)::before,
+.overall-player:nth-child(2)::before,
+.overall-player:nth-child(3)::before {
+    animation:
+        topThreeGlow 2.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   RANK
+   ========================================================= */
+
+.overall-rank {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    font-weight: 900;
+
+    color: #666;
+}
+
+.overall-player:nth-child(1) .overall-rank {
+    color: #f1c94b;
+}
+
+.overall-player:nth-child(2) .overall-rank {
+    color: #c8c8c8;
+}
+
+.overall-player:nth-child(3) .overall-rank {
+    color: #b97849;
+}
+
+
+/* =========================================================
+   CHARACTER PORTRAIT
+   ========================================================= */
+
+.overall-player-info {
+    display: contents;
+}
+
+.overall-character-container {
+    width: 90px;
+    height: 110px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.overall-skin {
+    width: 115px;
+    height: 150px;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    transform: translateY(50px);
+
+    filter:
+        drop-shadow(
+            0 8px 7px rgba(0, 0, 0, 0.75)
+        );
+
+    transition: filter 0.25s ease;
+}
+
+.overall-player:hover .overall-skin {
+    filter:
+        drop-shadow(
+            0 11px 9px rgba(0, 0, 0, 0.85)
+        );
+}
+
+
+/* =========================================================
+   PLAYER INFO
+   ========================================================= */
+
+.overall-info {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 6px;
+}
+
+.overall-player-name {
+    font-size: 18px;
+
+    font-weight: 900;
+
+    color: white;
+
+    white-space: nowrap;
+
+    overflow: visible;
+}
+
+.overall-points {
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #7340e9;
+}
+
+
+/* =========================================================
+   OVERALL TIERS
+   ========================================================= */
+
+.overall-tiers {
+    width: 70%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(10, minmax(45px, 1fr));
+
+    gap: 5px;
+
+    min-width: 0;
+
+    justify-self: end;
+}
+
+
+/* =========================================================
+   OVERALL TIER BOX
+   ========================================================= */
+
+.overall-tier {
+    height: 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    background: #191919;
+
+    border: 1px solid #303030;
+
+    border-radius: 25px;
+
+    transition: 0.2s;
+}
+
+.overall-tier:hover {
+    background: #222;
+
+    border-color: #4b4b4b;
+
+    transform: translateY(-2px);
+}
+
+.overall-tier img {
+    width: 29px;
+    height: 29px;
+
+    object-fit: contain;
+
+    opacity: 0.9;
+}
+
+.overall-tier-value {
+    font-size: 12px;
+
+    font-weight: 900;
+
+    white-space: nowrap;
+}
+
+.overall-tier-value.tier-na {
+    color: #555;
+}
+
+
+/* =========================================================
+   OVERALL PLAYER TITLE
+   ========================================================= */
+
+.overall-player-title {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    color: #aaa;
+
+    white-space: nowrap;
+}
+
+.overall-player-title img {
+    width: 27px;
+    height: 27px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   RETIRED OVERALL TIER
+   ========================================================= */
+
+.retired-tier {
+    background:
+        linear-gradient(
+            145deg,
+            #191919,
+            #241f2b
+        );
+
+    border-color: #4a405b;
+}
+
+.retired-tier:hover {
+    background:
+        linear-gradient(
+            145deg,
+            #211c27,
+            #2d2635
+        );
+
+    border-color: #7340e9;
+
+    box-shadow:
+        0 5px 15px rgba(115, 64, 233, 0.22);
+}
+
+.overall-tier-value.tier-retired {
+    color: #a58bd8;
+}
+
+.retired-kit-icon {
+    opacity: 0.55;
+
+    filter:
+        grayscale(0.65)
+        brightness(0.8)
+        sepia(0.15)
+        hue-rotate(225deg);
+}
+
+
+/* =========================================================
+   RETIRED PLAYER CARD
+   ========================================================= */
+
+.player-card.tier-retired {
+    color: #a58bd8;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1b1b1b,
+            #241f2b
+        );
+
+    border-color: #4a405b;
+}
+
+.player-card.tier-retired:hover {
+    background:
+        linear-gradient(
+            145deg,
+            #211c27,
+            #2d2635
+        );
+
+    border-color: #7340e9;
+
+    box-shadow:
+        0 0 12px rgba(115, 64, 233, 0.25);
+}
+
+.player-card.tier-retired .player-name {
+    color: #a58bd8;
+}
+
+
+/* =========================================================
+   N/A ICON
+   ========================================================= */
+
+.na-kit-icon {
+    filter: grayscale(1);
+
+    opacity: 0.35 !important;
+}
+
+
+/* =========================================================
+   PROFILE OVERLAY
+   ========================================================= */
+
+.profile-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.78);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 10000;
+}
+
+.profile-overlay.active {
+    display: flex;
+}
+
+
+/* =========================================================
+   PROFILE BOX
+   ========================================================= */
+
+.profile-box {
+    position: relative;
+
+    width: 90%;
+    max-width: 900px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 35px;
+
+    background: #1d1d1d;
+
+    border: 2px solid #3f3f3f;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 30px 100px #000;
+}
+
+
+/* =========================================================
+   PROFILE CLOSE
+   ========================================================= */
+
+.profile-close {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #292929;
+
+    border: 2px solid #3f3f3f;
+
+    color: #aaa;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    z-index: 10;
+}
+
+.profile-close:hover {
+    color: white;
+
+    background: #7340e9;
+
+    border-color: #7340e9;
+}
+
+
+/* =========================================================
+   PROFILE TOP
+   ========================================================= */
+
+.profile-top {
+    width: 100%;
+
+    min-height: 300px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding: 10px 35px 25px;
+
+    border-bottom: 1px solid #3f3f3f;
+}
+
+
+/* =========================================================
+   PROFILE INFORMATION
+   ========================================================= */
+
+.profile-information {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    min-width: 0;
+}
+
+.profile-name {
+    margin: 0;
+
+    font-size: 34px;
+
+    font-weight: 900;
+
+    color: white;
+
+    word-break: break-word;
+}
+
+.profile-points {
+    margin-top: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #7340e9;
+}
+
+.profile-placement {
+    margin-top: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    color: #aaa;
+}
+
+
+/* =========================================================
+   PROFILE TITLE
+   ========================================================= */
+
+.profile-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 22px;
+
+    padding: 12px 16px;
+
+    background: #252525;
+
+    border: 1px solid #363636;
+
+    border-radius: 12px;
+
+    max-width: 360px;
+}
+
+.profile-title img {
+    width: 34px;
+    height: 34px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+.profile-title-name {
+    font-size: 16px;
+
+    font-weight: 900;
+
+    color: white;
+
+    white-space: nowrap;
+}
+
+.profile-title-description {
+    margin-top: 3px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   PROFILE SKIN
+   ========================================================= */
+
+.profile-skin-container {
+    width: 300px;
+    height: 280px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.profile-skin {
+    width: 280px;
+    height: 360px;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    transform: translateY(65px);
+
+    filter:
+        drop-shadow(
+            0 15px 15px rgba(0, 0, 0, 0.7)
+        );
+
+    transition: 0.3s ease;
+}
+
+.profile-skin:hover {
+    transform:
+        translateY(60px)
+        scale(1.03);
+
+    filter:
+        drop-shadow(
+            0 18px 18px rgba(0, 0, 0, 0.85)
+        );
+}
+
+
+/* =========================================================
+   PROFILE TIERS
+   ========================================================= */
+
+.profile-tier-section {
+    width: 100%;
+
+    margin-top: 25px;
+    margin-left: 30px;
+}
+
+.profile-tier-section h3 {
+    margin: 0 0 15px;
+
+    font-size: 18px;
+
+    color: #aaa;
+
+    letter-spacing: 1px;
+}
+
+.profile-tier-row {
+    width: 100%;
+
+    display: flex;
+
+    gap: 7px;
+
+    overflow-x: auto;
+
+    padding-bottom: 8px;
+}
+
+.profile-tier-box {
+    width: 68px;
+    min-width: 68px;
+
+    height: 78px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    background: #191919;
+
+    border: 1px solid #303030;
+
+    border-radius: 18px;
+
+    transition: 0.2s ease;
+}
+
+.profile-tier-box:hover {
+    background: #222;
+
+    border-color: #7340e9;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.profile-tier-icon {
+    width: 25px;
+    height: 25px;
+
+    object-fit: contain;
+
+    opacity: 0.9;
+
+    flex-shrink: 0;
+}
+
+.profile-tier-value {
+    font-size: 12px;
+
+    font-weight: 900;
+
+    white-space: nowrap;
+}
+
+.profile-tier-value.tier-na {
+    color: #555;
+}
+
+.profile-tier-value.tier-ht1,
+.profile-tier-value.tier-ht2,
+.profile-tier-value.tier-ht3,
+.profile-tier-value.tier-ht4,
+.profile-tier-value.tier-ht5 {
+    color: #1d5cff;
+}
+
+.profile-tier-value.tier-lt1,
+.profile-tier-value.tier-lt2,
+.profile-tier-value.tier-lt3,
+.profile-tier-value.tier-lt4,
+.profile-tier-value.tier-lt5 {
+    color: #72a4ff;
+}
+
+
+/* =========================================================
+   RETIRED PROFILE TIER
+   ========================================================= */
+
+.profile-tier-box.retired-tier {
+    background:
+        linear-gradient(
+            145deg,
+            #191919,
+            #241f2b
+        );
+
+    border-color: #4a405b;
+}
+
+.profile-tier-box.retired-tier:hover {
+    background:
+        linear-gradient(
+            145deg,
+            #211c27,
+            #2d2635
+        );
+
+    border-color: #7340e9;
+
+    box-shadow:
+        0 5px 15px rgba(115, 64, 233, 0.22);
+}
+
+.profile-tier-value.tier-retired {
+    color: #a58bd8;
+}
+
+
+/* =========================================================
+   RETIRED STATUS
+   ========================================================= */
+
+.profile-retired-status {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 18px;
+
+    padding: 7px 13px;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #29222f,
+            #34283e
+        );
+
+    border: 1px solid #4a405b;
+
+    color: #a58bd8;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   PROFILE SCROLLBARS
+   ========================================================= */
+
+.profile-box::-webkit-scrollbar {
+    width: 7px;
+}
+
+.profile-box::-webkit-scrollbar-track {
+    background: #181818;
+
+    border-radius: 10px;
+}
+
+.profile-box::-webkit-scrollbar-thumb {
+    background: #3a3a3a;
+
+    border-radius: 10px;
+}
+
+.profile-box::-webkit-scrollbar-thumb:hover {
+    background: #7340e9;
+}
+
+.profile-tier-row::-webkit-scrollbar {
+    height: 5px;
+}
+
+.profile-tier-row::-webkit-scrollbar-track {
+    background: #181818;
+
+    border-radius: 10px;
+}
+
+.profile-tier-row::-webkit-scrollbar-thumb {
+    background: #3a3a3a;
+
+    border-radius: 10px;
+}
+
+.profile-tier-row::-webkit-scrollbar-thumb:hover {
+    background: #7340e9;
+}
+
+
+/* =========================================================
+   TIER POPUP
+   ========================================================= */
+
+.peak-tier-popup {
+    position: fixed;
+
+    z-index: 999999;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    padding: 8px 12px;
+
+    background: #202020;
+
+    border: 1px solid #7340e9;
+
+    border-radius: 9px;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+    pointer-events: none;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.65),
+        0 0 12px rgba(115, 64, 233, 0.25);
+
+    opacity: 0;
+
+    transform: translateY(4px);
+
+    transition:
+        opacity 0.12s ease,
+        transform 0.12s ease;
+}
+
+.peak-tier-popup.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   POPUP NORMAL TIER
+   ========================================================= */
+
+.tier-popup-line {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    line-height: 18px;
+}
+
+.tier-popup-current-tier {
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: normal;
+}
+
+.tier-popup-current-points {
+    color: #aaa;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    font-weight: normal;
+}
+
+
+/* =========================================================
+   POPUP PEAK TIER
+   ========================================================= */
+
+.tier-popup-peak {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    white-space: nowrap;
+
+    margin-bottom: 2px;
+}
+
+.peak-popup-label {
+    color: #aaa;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: normal;
+}
+
+.peak-popup-value {
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: normal;
+}
+
+
+/* Peak HT */
+
+.peak-popup-value.tier-ht1,
+.peak-popup-value.tier-ht2,
+.peak-popup-value.tier-ht3,
+.peak-popup-value.tier-ht4,
+.peak-popup-value.tier-ht5 {
+    color: #1d5cff;
+}
+
+
+/* Peak LT */
+
+.peak-popup-value.tier-lt1,
+.peak-popup-value.tier-lt2,
+.peak-popup-value.tier-lt3,
+.peak-popup-value.tier-lt4,
+.peak-popup-value.tier-lt5 {
+    color: #72a4ff;
+}
+
+
+/* =========================================================
+   POPUP POINTS
+   ========================================================= */
+
+.tier-popup-peak-points {
+    color: #72a4ff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    font-weight: normal;
+
+    text-align: center;
+
+    margin-bottom: 3px;
+}
+
+
+/* =========================================================
+   RESPONSIVE PROFILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .profile-box {
+        width: 95%;
+
+        padding: 25px;
+    }
+
+    .profile-top {
+        padding: 10px 10px 25px;
+
+        gap: 20px;
+    }
+
+    .profile-name {
+        font-size: 27px;
+    }
+
+    .profile-skin-container {
+        width: 220px;
+        height: 240px;
+    }
+
+    .profile-skin {
+        width: 220px;
+        height: 300px;
+
+        transform: translateY(55px);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .profile-box {
+        padding: 20px;
+    }
+
+    .profile-top {
+        flex-direction: column-reverse;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .profile-information {
+        align-items: center;
+
+        width: 100%;
+    }
+
+    .profile-skin-container {
+        width: 220px;
+        height: 230px;
+    }
+
+    .profile-skin {
+        width: 210px;
+        height: 290px;
+
+        transform: translateY(55px);
+    }
+
+    .profile-title {
+        max-width: 100%;
+    }
+
+    .profile-title-name {
+        white-space: normal;
+    }
+
+    .peak-tier-popup {
+        padding: 7px 10px;
+
+        font-size: 11px;
+
+        border-radius: 8px;
+    }
+
+    .peak-popup-label,
+    .peak-popup-value {
+        font-size: 11px;
+    }
+}
+

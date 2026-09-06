@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <title>Yugotiers</title>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         MAIN CONTAINER
+         ===================================================== -->
+
+    <div class="main-container">
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header>
+
+            <div class="header-box">
+
+
+                <!-- ================= SEARCH ================= -->
+
+                <div class="header-searchbar">
+
+                    <input
+                        type="text"
+                        id="player-search"
+                        placeholder="Search player..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- ================= TITLE ================= -->
+
+                <div class="header-title">
+
+                    <h1>
+                        YUGOTIERS
+                    </h1>
+
+                </div>
+
+
+                <!-- ================= DISCORD ================= -->
+
+                <div class="header-nav">
+
+                    <a
+                        href="#"
+                        id="discord-button"
+                    >
+
+                        <img
+                            src="img/discord-icon.svg"
+                            alt="Discord"
+                        >
+
+                        Discord
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 SEARCH RESULTS
+
+                 JavaScript will put matching players here.
+                 ================================================= -->
+
+            <div
+                class="search-results"
+                id="search-results"
+            ></div>
+
+
+        </header>
+
+
+
+        <!-- =====================================================
+             NAVIGATION + TIERLIST
+             ===================================================== -->
+
+        <article>
+
+
+            <!-- =================================================
+                 KIT NAVIGATION
+                 ================================================= -->
+
+            <nav>
+
+                <div class="nav-box">
+
+                    <div class="kit-navigation">
+
+
+                        <!-- ================= OVERALL ================= -->
+
+                        <button
+                            class="kit-button active"
+                            data-kit="overall"
+                        >
+
+                            <img
+                                src="img/General.png"
+                                alt="Overall"
+                            >
+
+                            OVERALL
+
+                        </button>
+
+
+                        <!-- ================= UHC ================= -->
+
+                        <button
+                            class="kit-button"
+                            data-kit="uhc"
+                        >
+
+                            <img
+                                src="img/Uhc.svg"
+                                alt="UHC"
+                            >
+
+                            UHC
+
+                        </button>
+
+
+                        <!-- ================= CRYSTAL ================= -->
+
+                        <button
+                            class="kit-button"
+                            data-kit="crystal"
+                        >
+
+                            <img
+                                src="img/Crystals.svg"
+                                alt="Crystal"
+                            >
+
+                            CRYSTAL
+
+                        </button>
+
+
+                        <!-- ================= SWORD ================= -->
+
+                        <button
+                            class="kit-button"
+                            data-kit="sword"
+                        >
+
+                            <img
+                                src="img/Sword.svg"
+                                alt="Sword"
+                            >
+
+                            SWORD
+
+                        </button>
+
+
+                        <!-- ================= AXE ================= -->
+
+                        <button
+                            class="kit-button"
+                            data-kit="axe"
+                        >
+
+                            <img
+                                src="img/Axe.svg"
+                                alt="Axe"
+                            >
+
+                            AXE
+
+                        </button>
+
+
+                        <!-- ================= NETHPOT ================= -->
+
+                        <button
+                            class="kit-button"
+                            data-kit="nethpot"
+                        >
+
+                            <img
+                                src="img/Nethpot.svg"
+                                alt="Nethpot"
+                            >
+
+                            NETHPOT
+
+                        </button>
+
+
+                        <!-- ================= DIAPOT ================= -->
+
+                        <button
+                            class="kit-button"
+                            data-kit="diapot"
+                        >
+
+                            <img
+                                src="img/Diamondpot.svg"
+                                alt="Diapot"
+                            >
+
+                            DIAPOT
+
+                        </button>
+
+
+                        <!-- ================= OGV ================= -->
+
+                        <button
+                            class="kit-button"
+                            data-kit="ogv"
+                        >
+
+                            <img
+                                src="img/ogv.svg"
+                                alt="OGV"
+                            >
+
+                            OGV
+
+                        </button>
+
+
+                        <!-- ================= MACE ================= -->
+
+                        <button
+                            class="kit-button"
+                            data-kit="mace"
+                        >
+
+                            <img
+                                src="img/Mace.svg"
+                                alt="Mace"
+                            >
+
+                            MACE
+
+                        </button>
+
+
+                        <!-- ================= SMP ================= -->
+
+                        <button
+                            class="kit-button"
+                            data-kit="smp"
+                        >
+
+                            <img
+                                src="img/Smp.svg"
+                                alt="SMP"
+                            >
+
+                            SMP
+
+                        </button>
+
+
+                        <!-- ================= DIASMP ================= -->
+
+                        <button
+                            class="kit-button"
+                            data-kit="diasmp"
+                        >
+
+                            <img
+                                src="img/diasmp.png"
+                                alt="Diasmp"
+                            >
+
+                            DIASMP
+
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </nav>
+
+
+
+            <!-- =====================================================
+                 LEADERBOARD / TIERLIST
+                 ===================================================== -->
+
+            <div class="leaderboard-box">
+
+
+                <!-- ================= TIERLIST HEADER ================= -->
+
+                <div class="tierlist-header">
+
+                    <h2 id="tierlist-title">
+                        OVERALL
+                    </h2>
+
+                    <p id="tierlist-description">
+                        Overall rankings based on tier points.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     JAVASCRIPT WILL GENERATE:
+
+                     OVERALL:
+                     - Rank
+                     - Minecraft character
+                     - Player name
+                     - Points
+                     - UHC tier
+                     - Crystal tier
+                     - Sword tier
+                     - Axe tier
+                     - Nethpot tier
+                     - Diapot tier
+                     - OGV tier
+                     - Mace tier
+                     - SMP tier
+                     - Diasmp tier
+
+                     SUB-TIERLIST:
+                     - Tier 5
+                     - Tier 4
+                     - Tier 3
+                     - Tier 2
+                     - Tier 1
+
+                     ================================================= -->
+
+                <div
+                    id="tierlist-container"
+                ></div>
+
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- =====================================================
+             PLAYER PROFILE POPUP
+             ===================================================== -->
+
+        <div
+            class="profile-overlay"
+            id="profile-overlay"
+        >
+
+
+            <div class="profile-box">
+
+
+                <!-- ================= CLOSE BUTTON ================= -->
+
+                <button
+                    class="profile-close"
+                    id="profile-close"
+                    aria-label="Close profile"
+                >
+
+                    ×
+
+                </button>
+
+
+                <!-- =================================================
+                     PROFILE CONTENT
+
+                     JavaScript will generate:
+
+                     - Minecraft skin
+                     - Player name
+                     - Overall points
+                     - UHC tier
+                     - Crystal tier
+                     - Sword tier
+                     - Axe tier
+                     - Nethpot tier
+                     - Diapot tier
+                     - OGV tier
+                     - Mace tier
+                     - SMP tier
+                     - Diasmp tier
+
+                     ================================================= -->
+
+                <div
+                    id="profile-content"
+                ></div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
